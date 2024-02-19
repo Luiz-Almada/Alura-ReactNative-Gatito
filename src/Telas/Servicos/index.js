@@ -29,6 +29,10 @@ export default function Servicos() {
     <Text>Serviços!</Text>
     <FlatList
       data={servicos}
+      
+      // se o teclado aparecer e sumir
+      // removeClippedSubviews={false}
+
       renderItem={({item}) => <Item {...item}/>}
       keyExtractor={({id}) => String(id)}
     />
