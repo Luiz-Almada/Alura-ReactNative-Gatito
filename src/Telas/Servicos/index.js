@@ -1,7 +1,8 @@
 import React from "react";
-import {StatusBar, Text, FlatList } from "react-native";
+import { View, FlatList, KeyboardAvoidingView, Platform } from "react-native";
 
-import Item from './Item';
+import Item from "./Item";
+import estilosGlobal from "../../estilos";
 
 const servicos = [
   {
@@ -20,21 +21,29 @@ const servicos = [
     id: 3,
     nome: "Vacina Antirrábica",
     preco: 99.9,
-    descricao: "Uma dose da vacina antirrábica! Seu gato precisa de uma por ano!"
-  }
+    descricao:
+      "Uma dose da vacina antirrábica! Seu gato precisa de uma por ano!",
+  },
 ];
 
 export default function Servicos() {
-  return <>
-    <Text>Serviços!</Text>
-    <FlatList
-      data={servicos}
-      
-      // se o teclado aparecer e sumir
-      // removeClippedSubviews={false}
+  return (
+    <>
+      <View style={estilosGlobal.preencher}>
+        {/* <KeyboardAvoidingView
+          behavior={Platform.OS == 'ios' ? "padding" : "height"}
+          style={estilosGlobal.preencher}
+        > */}
+          <FlatList
+            data={servicos}
+            // se o teclado aparecer e sumir
+            // removeClippedSubviews={false}
 
-      renderItem={({item}) => <Item {...item}/>}
-      keyExtractor={({id}) => String(id)}
-    />
-  </> 
+            renderItem={({ item }) => <Item {...item} />}
+            keyExtractor={({ id }) => String(id)}
+          />
+        {/* </KeyboardAvoidingView> */}
+      </View>
+    </>
+  );
 }
