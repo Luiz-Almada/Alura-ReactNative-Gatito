@@ -9,6 +9,9 @@ import TelaPadrao from "./src/componentes/TelaPadrao/index";
 Reactotron.configure().useReactNative().connect();
 
 export default function App() {
+  // Reactotron.log({
+  //   curso: "Alura"
+  // })
   console.tron = Reactotron;
   console.tron.log({
     curso: "Alura"
