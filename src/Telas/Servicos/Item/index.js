@@ -50,7 +50,6 @@ export default function Item({ nome, preco, descricao }) {
             <View style={estilos.valor}>
               <Text style={estilos.descricao}>Total:</Text>
               <Text style={estilos.preco}>
-                {" "}
                 {Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",
